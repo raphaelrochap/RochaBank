@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "TMfPKNOjZKcuCUzL0YeC62wmR89vEtxP/2EGFV6NxMA=",
+  "Source": "RochaBank",
+  "BasePath": "_content/RochaBank",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -1,0 +1,414 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "RochaBank",
+    "version": "1.0"
+  },
+  "paths": {
+    "/Auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "description": "Aqui você poderá ter acesso ao token de autenticação, que te permitirá utilizar os endpoints desta API",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContaBancariaLoginDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContaBancariaLoginDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContaBancariaLoginDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/ContaBancaria/cadastrar": {
+      "post": {
+        "tags": [
+          "ContaBancaria"
+        ],
+        "description": "Aqui você poderá cadastrar Contas Bancárias no RochaBank.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContaBancariaInputDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContaBancariaInputDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContaBancariaInputDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/ContaBancaria/deletar/{numeroconta}": {
+      "delete": {
+        "tags": [
+          "ContaBancaria"
+        ],
+        "description": "Aqui você poderá remover uma Conta Bancária do RochaBank.",
+        "parameters": [
+          {
+            "name": "numeroconta",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/ContaBancaria/deposito": {
+      "patch": {
+        "tags": [
+          "ContaBancaria"
+        ],
+        "description": "Aqui você poderá depositar um valor em uma Conta Bancária do RochaBank.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContaBancariaAlteraSaldoInputDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContaBancariaAlteraSaldoInputDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContaBancariaAlteraSaldoInputDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/ContaBancaria/saque": {
+      "patch": {
+        "tags": [
+          "ContaBancaria"
+        ],
+        "description": "Aqui você poderá sacar um valor em uma Conta Bancária do RochaBank.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContaBancariaAlteraSaldoInputDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContaBancariaAlteraSaldoInputDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContaBancariaAlteraSaldoInputDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/ContaBancaria/verificarSaldo/{numeroConta}": {
+      "get": {
+        "tags": [
+          "ContaBancaria"
+        ],
+        "description": "Aqui você poderá, baseado em um valor, verificar o saldo de uma Conta Bancária do RochaBank.",
+        "parameters": [
+          {
+            "name": "numeroConta",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "valor",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Notas/inserirNotas": {
+      "post": {
+        "tags": [
+          "Notas"
+        ],
+        "description": "Aqui você poderá incluir no caixa eletrônico, notas para que o cliente possa sacar.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Notas"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Notas"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Notas"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Notas/removerNotas": {
+      "patch": {
+        "tags": [
+          "Notas"
+        ],
+        "description": "Aqui você poderá remover notas do caixa eletrônico, logo após o usuário sacar.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Notas"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Notas"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Notas"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Notas/notasDisponiveis": {
+      "get": {
+        "tags": [
+          "Notas"
+        ],
+        "description": "Aqui você poderá listar para o usuários as escolhas de notas para ele sacar.",
+        "parameters": [
+          {
+            "name": "valor",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Notas"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Notas"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Notas"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Notas/verificarNotasDoCaixa": {
+      "get": {
+        "tags": [
+          "Notas"
+        ],
+        "description": "Aqui você poderá mostrar ao cliente as notas existentes neste caixa eletrônico.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ContaBancariaAlteraSaldoInputDTO": {
+        "required": [
+          "numeroConta"
+        ],
+        "type": "object",
+        "properties": {
+          "numeroConta": {
+            "type": "string",
+            "nullable": true
+          },
+          "valor": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ContaBancariaInputDTO": {
+        "required": [
+          "nome",
+          "senha",
+          "sobrenome"
+        ],
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "senha": {
+            "type": "string",
+            "nullable": true
+          },
+          "sobrenome": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ContaBancariaLoginDTO": {
+        "required": [
+          "numeroConta",
+          "senha"
+        ],
+        "type": "object",
+        "properties": {
+          "numeroConta": {
+            "type": "string",
+            "nullable": true
+          },
+          "senha": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Notas": {
+        "type": "object",
+        "properties": {
+          "dois": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cinco": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dez": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vinte": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cinquenta": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cem": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "duzentos": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

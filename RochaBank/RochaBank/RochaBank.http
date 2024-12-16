@@ -1,0 +1,6 @@
+@RochaBank_HostAddress = http://localhost:5007
+
+GET {{RochaBank_HostAddress}}/rochabank/
+Accept: application/json
+
+###

@@ -1,0 +1,181 @@
+[
+  {
+    "ContainingType": "RochaBank.Controllers.AuthController",
+    "Method": "AuthenticarLogin",
+    "RelativePath": "Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "RochaBank.DTO.ContaBancariaLoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Description": "Aqui voc\u00EA poder\u00E1 ter acesso ao token de autentica\u00E7\u00E3o, que te permitir\u00E1 utilizar os endpoints desta API"
+  },
+  {
+    "ContainingType": "RochaBank.Controllers.ContaBancariaController",
+    "Method": "Cadastrar",
+    "RelativePath": "ContaBancaria/cadastrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "conta",
+        "Type": "RochaBank.DTO.ContaBancariaInputDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Description": "Aqui voc\u00EA poder\u00E1 cadastrar Contas Banc\u00E1rias no RochaBank."
+  },
+  {
+    "ContainingType": "RochaBank.Controllers.ContaBancariaController",
+    "Method": "Deletar",
+    "RelativePath": "ContaBancaria/deletar/{numeroconta}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "numeroconta",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Description": "Aqui voc\u00EA poder\u00E1 remover uma Conta Banc\u00E1ria do RochaBank."
+  },
+  {
+    "ContainingType": "RochaBank.Controllers.ContaBancariaController",
+    "Method": "Deposito",
+    "RelativePath": "ContaBancaria/deposito",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "contaParam",
+        "Type": "RochaBank.DTO.ContaBancariaAlteraSaldoInputDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Description": "Aqui voc\u00EA poder\u00E1 depositar um valor em uma Conta Banc\u00E1ria do RochaBank."
+  },
+  {
+    "ContainingType": "RochaBank.Controllers.ContaBancariaController",
+    "Method": "Saque",
+    "RelativePath": "ContaBancaria/saque",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "contaParam",
+        "Type": "RochaBank.DTO.ContaBancariaAlteraSaldoInputDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Description": "Aqui voc\u00EA poder\u00E1 sacar um valor em uma Conta Banc\u00E1ria do RochaBank."
+  },
+  {
+    "ContainingType": "RochaBank.Controllers.ContaBancariaController",
+    "Method": "VerificarSaldo",
+    "RelativePath": "ContaBancaria/verificarSaldo/{numeroConta}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "numeroConta",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "valor",
+        "Type": "System.Double",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "Description": "Aqui voc\u00EA poder\u00E1, baseado em um valor, verificar o saldo de uma Conta Banc\u00E1ria do RochaBank."
+  },
+  {
+    "ContainingType": "RochaBank.Controllers.NotasController",
+    "Method": "InserirNotas",
+    "RelativePath": "Notas/inserirNotas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notas",
+        "Type": "RochaBank.Models.Notas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Description": "Aqui voc\u00EA poder\u00E1 incluir no caixa eletr\u00F4nico, notas para que o cliente possa sacar."
+  },
+  {
+    "ContainingType": "RochaBank.Controllers.NotasController",
+    "Method": "NotasDisponiveis",
+    "RelativePath": "Notas/notasDisponiveis",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "valor",
+        "Type": "System.Double",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IAsyncEnumerable\u00601[[RochaBank.Models.Notas, RochaBank, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "Description": "Aqui voc\u00EA poder\u00E1 listar para o usu\u00E1rios as escolhas de notas para ele sacar."
+  },
+  {
+    "ContainingType": "RochaBank.Controllers.NotasController",
+    "Method": "RemoverNotas",
+    "RelativePath": "Notas/removerNotas",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notasDeSaque",
+        "Type": "RochaBank.Models.Notas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Description": "Aqui voc\u00EA poder\u00E1 remover notas do caixa eletr\u00F4nico, logo ap\u00F3s o usu\u00E1rio sacar."
+  },
+  {
+    "ContainingType": "RochaBank.Controllers.NotasController",
+    "Method": "VerificarNotasDoCaixa",
+    "RelativePath": "Notas/verificarNotasDoCaixa",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Description": "Aqui voc\u00EA poder\u00E1 mostrar ao cliente as notas existentes neste caixa eletr\u00F4nico."
+  }
+]
